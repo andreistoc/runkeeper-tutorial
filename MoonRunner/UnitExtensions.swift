@@ -1,3 +1,4 @@
+//
 /**
  * Copyright (c) 2017 Razeware LLC
  *
@@ -28,26 +29,40 @@
  * THE SOFTWARE.
  */
 
-import UIKit
-import MapKit
+import Foundation
 
-class RunDetailsViewController: UIViewController {
+class UnitConverterPace: UnitConverter {
+  private let coefficient: Double
   
-  @IBOutlet weak var mapView: MKMapView!
-  @IBOutlet weak var distanceLabel: UILabel!
-  @IBOutlet weak var dateLabel: UILabel!
-  @IBOutlet weak var timeLabel: UILabel!
-  @IBOutlet weak var paceLabel: UILabel!
-  
-  var run: Run!
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    configureView()
+  init(coefficient: Double) {
+    self.coefficient = coefficient
   }
   
-  private func configureView(){
-    
+  
+  override func baseUnitValue(fromValue value: Double) -> Double {
+    return reciprocal(value * coefficient)
   }
   
+  override func value(fromBaseUnitValue baseUnitValue: Double) -> Double {
+    return reciprocal(baseUnitValue * coefficient)
+  }
+  
+  private func reciprocal(_ value: Double) -> Double {
+    guard value != 0 else {return 0}
+    return 1.0 / value
+  }
+}
+
+extension UnitSpeed {
+  class var secondsPerMeter: UnitSpeed {
+    return UnitSpeed(symbol: "sec/m", converter: UnitConverterPace(coefficient: 1))
+  }
+  
+  class var minutesPerKilometer: UnitSpeed {
+    return UnitSpeed(symbol: "min/km", converter: UnitConverterPace(coefficient: 60.0 / 1000.0))
+  }
+  
+  class var minutesPerMile: UnitSpeed {
+    return UnitSpeed(symbol: "min/m", converter: UnitConverterPace(coefficient: 60.0/1609.34))
+  }
 }

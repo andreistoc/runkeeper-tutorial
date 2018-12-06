@@ -18,6 +18,9 @@
 		18CF26ED1E80290C0097F88C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF26EC1E80290C0097F88C /* HomeViewController.swift */; };
 		18CF26EF1E80291E0097F88C /* NewRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF26EE1E80291E0097F88C /* NewRunViewController.swift */; };
 		18CF26F11E80292C0097F88C /* RunDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF26F01E80292C0097F88C /* RunDetailsViewController.swift */; };
+		49DD167121B8026300C66796 /* UnitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD167021B8026300C66796 /* UnitExtensions.swift */; };
+		49DD167321B805A300C66796 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD167221B805A300C66796 /* FormatDisplay.swift */; };
+		49DD167521B823DB00C66796 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD167421B823DB00C66796 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		18CF26EC1E80290C0097F88C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		18CF26EE1E80291E0097F88C /* NewRunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRunViewController.swift; sourceTree = "<group>"; };
 		18CF26F01E80292C0097F88C /* RunDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunDetailsViewController.swift; sourceTree = "<group>"; };
+		49DD167021B8026300C66796 /* UnitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitExtensions.swift; sourceTree = "<group>"; };
+		49DD167221B805A300C66796 /* FormatDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
+		49DD167421B823DB00C66796 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,9 @@
 				18888DD11E7F0FA80038A3AF /* Info.plist */,
 				18CF26E91E80265F0097F88C /* badges.txt */,
 				18350CE71E882A860054E1C6 /* StoryboardSupport.swift */,
+				49DD167021B8026300C66796 /* UnitExtensions.swift */,
+				49DD167221B805A300C66796 /* FormatDisplay.swift */,
+				49DD167421B823DB00C66796 /* LocationManager.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -148,8 +157,14 @@
 				TargetAttributes = {
 					18888DBE1E7F0FA80038A3AF = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = PA3CQKBV4P;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -192,11 +207,14 @@
 			files = (
 				18CF26EF1E80291E0097F88C /* NewRunViewController.swift in Sources */,
 				18888DD91E7F1D940038A3AF /* CoreDataStack.swift in Sources */,
+				49DD167521B823DB00C66796 /* LocationManager.swift in Sources */,
 				18888DCB1E7F0FA80038A3AF /* MoonRunner.xcdatamodeld in Sources */,
 				18CF26F11E80292C0097F88C /* RunDetailsViewController.swift in Sources */,
 				18888DC31E7F0FA80038A3AF /* AppDelegate.swift in Sources */,
 				18CF26ED1E80290C0097F88C /* HomeViewController.swift in Sources */,
+				49DD167321B805A300C66796 /* FormatDisplay.swift in Sources */,
 				18350CE81E882A860054E1C6 /* StoryboardSupport.swift in Sources */,
+				49DD167121B8026300C66796 /* UnitExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PA3CQKBV4P;
 				INFOPLIST_FILE = MoonRunner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razerware.MoonRunner;
@@ -343,7 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PA3CQKBV4P;
 				INFOPLIST_FILE = MoonRunner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razerware.MoonRunner;
